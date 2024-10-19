@@ -13,7 +13,8 @@ public class Book implements Serializable{
     private String category;
     private long unitInStock;
     private String relesaseDate;
-    private String condotion;
+    private String condition;
+    private String filename;
 
     public Book() {
         super();
@@ -98,11 +99,19 @@ public class Book implements Serializable{
     }
 
     public String getCondotion() {
-        return this.condotion;
+        return this.condition;
     }
 
-    public void setCondotion(String condotion) {
-        this.condotion = condotion;
+    public void setCondotion(String condition) {
+        this.condition = condition;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename=filename;
     }
 
 

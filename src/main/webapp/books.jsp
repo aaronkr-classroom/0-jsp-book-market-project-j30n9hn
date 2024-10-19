@@ -1,10 +1,11 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Book" %>
+<%@ page import="dao.BookRepository" %>
 <jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session" />
 <html>
     <head>
-        <link href="https://cdn.jsdeliver.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="22stylesheet">
+        <link rel="stylesheet" href="./resources/css/bootstrap.min.css"/>
         <title>도서 목록</title>
     </head>
     <body>
@@ -18,7 +19,8 @@
                 </div>
             </div>
             <%
-                ArrayList<Book> listOfBooks=bookDAO.getAllBooks();
+                BookRepository dao=BookRepository.getInstance();
+                ArrayList<Book> listOfBooks=dao.getAllBooks();
             %>
             <div class="row align-items-md-stretch text-center">
             <%
@@ -27,11 +29,14 @@
             %>
             <div class="col-md-4">
                 <div class="h-100 p-2">
+                    <img src="./resources/images/<%=Book.getFilename() %>" style="width : 250; height : 350" />
                     <h5><b><%=book.getName()%></b></h5>
                     <p><%=book.getAuthor()%></p>
                     <p><%=book.getPublisher()%> | 35<%=book.getUnitPrice() %>원</p>
                     <p>37<%=book.getDescription().substring(0,60) %>...
                     <p><%=book.getUnitPrice() %>원</p>
+                    <p> <a href="./book.jsp?id=<%=book.getBookId() %>"
+                    class="btn btn-secondary" role="button"> 상세정보 &raquo;></a>
                 </div>
                 <%
                     }
