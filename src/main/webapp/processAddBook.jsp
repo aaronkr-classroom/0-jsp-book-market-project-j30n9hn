@@ -51,7 +51,7 @@
     Book newBook=new Book();
     newBook.setBookId(bookId);
     newBook.setName(name);
-    newBook.setPrice(price);
+    newBook.setUnitPrice(price);
     newBook.setAuthor(author);
     newBook.setPublisher(publisher);
     newBook.setReleaseDate(releaseDate);
