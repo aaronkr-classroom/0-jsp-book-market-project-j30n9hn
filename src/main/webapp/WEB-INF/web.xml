@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app...>
+<web-app>
     <security-role>
         <description></description>
         <role-name>admin</role-name>
