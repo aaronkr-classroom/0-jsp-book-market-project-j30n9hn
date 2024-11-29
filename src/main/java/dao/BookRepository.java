@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import dto.Book;
 
 public class BookRepository {
-    private ArrayList<Book> listOfBook = new ArrayList<Book>();
+    private ArrayList<Book> listOfBooks = new ArrayList<Book>();
     private static BookRepository instance=new BookRepository();
 
     public static BookRepository getInstance() {
@@ -39,20 +39,20 @@ public class BookRepository {
         book3.setRelesaseDate("2023/01/01");
         book3.setFilename("ISBN1236.jpg");
 
-        listOfBook.add(book1);
-        listOfBook.add(book2);
-        listOfBook.add(book3);
+        this.listOfBooks.add(book1);
+        this.listOfBooks.add(book2);
+        this.listOfBooks.add(book3);
     }
 
     public ArrayList<Book> getAllBooks() {
-        return listOfBook;
+        return this.listOfBooks;
     }
 
     public Book getBookById(String bookId) {
         Book bookById = null;
 
-        for (int i = 0; i < listOfBook.size(); i++) {
-            Book book=listOfBook.get(i);
+        for (int i = 0; i < listOfBooks.size(); i++) {
+            Book book= (Book)listOfBooks.get(i);
             if (book != null && book.getBookId() != null && book.getBookId().equals(bookId)) {
                 bookById=book;
                 break;
@@ -63,6 +63,6 @@ public class BookRepository {
     }
 
     public void addBook(Book book) {
-        listOfBook.add(book);
+        this.listOfBooks.add(book);
     }
 }
