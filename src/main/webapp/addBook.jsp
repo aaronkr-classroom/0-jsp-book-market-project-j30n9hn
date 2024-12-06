@@ -7,7 +7,7 @@
 <title>도서등록</title>
 </head>
 <body>
-<fmt:setLocale value='<%=request.getPatameter("language") %>'/>
+<fmt:setLocale value='<%=request.getParameter("language") %>'/>
 <fmt:bundle basename="bundle.message">
 <div class="container py-4">
     <%@ include file="menu.jsp" %>
